@@ -3,7 +3,7 @@ import streamlit as st
 
 import pickle
 
-data=np.load("C:/Users/ass85/PycharmProjects/face_app_3/images_dataset.npz")
+data=np.load("images_dataset.npz")
 
 data2=np.load("C:/Users/ass85/PycharmProjects/face_app_2/final_embeddings_images_dataset.npz")
 
