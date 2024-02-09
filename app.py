@@ -1,12 +1,15 @@
 import numpy as np
 import streamlit as st
-import joblib
+
+import pickle
 
 data=np.load("C:/Users/ass85/PycharmProjects/face_recognition_project/.venv/Scripts/images_dataset.npz")
 
 data2=np.load("C:/Users/ass85/PycharmProjects/face_app_2/final_embeddings_images_dataset.npz")
 
-model = joblib.load('C:/Users/ass85/PycharmProjects/face_app_2/trained_model2.joblib')
+with open("modeler.pkl", "rb") as file:
+    model = pickle.load(file)
+
 images=data["images"]
 images2=data2["images"]
 print(images2)
@@ -18,10 +21,7 @@ st.text("choose the player you want the AI to recognize by specifying his ID")
 
 
 for i in (0,36,69):
-    a=i+35
-    if labels[i]=="messi":
-        a=68
-    st.image(images[i],caption=f"{labels[i]}'s ID is between{i} and {a}",width=100)
+    st.image(images[i],caption=f"{labels[i]}'s ID is between{i} and {i+36}",width=100)
 
 
 ID=st.number_input("select the player by specifying the ID")
