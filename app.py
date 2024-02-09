@@ -5,7 +5,7 @@ import pickle
 
 data=np.load("images_dataset.npz")
 
-data2=np.load("C:/Users/ass85/PycharmProjects/face_app_2/final_embeddings_images_dataset.npz")
+data2=np.load("final_embeddings_images_dataset.npz")
 
 with open("modeler.pkl", "rb") as file:
     model = pickle.load(file)
