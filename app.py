@@ -11,51 +11,6 @@ from PIL import Image
 from sklearn.preprocessing import LabelEncoder
 from tester import main
 
-def extract_face(img, output_size=(160, 160)):
-    try:
-        # Utilisez OpenCV pour lire l'image correctement
-        img2 = cv2.imdecode(np.frombuffer(img.read(), np.uint8), cv2.IMREAD_COLOR)
-
-        img_gray =img2
-
-
-        faces = face_cascade.detectMultiScale(img_gray, scaleFactor=1.3, minNeighbors=5)
-
-        if len(faces) > 0:
-            x, y, w, h = faces[0]
-            face_roi_gray = img_gray[y:y + h, x:x + w]
-            face_roi_resized = cv2.resize(face_roi_gray, output_size, interpolation=cv2.INTER_AREA)
-            img_f = Image.fromarray(face_roi_resized)
-            img_f.save("mba_f2.png")
-            return face_roi_resized
-        else:
-            return None
-    except Exception as e:
-        print(f"Error in extract_face: {e}")
-        return None
-
-
-
-def facenet(images):
-    # Charger le modèle VGG16 pré-entraîné une seule fois en dehors de la fonction
-    vgg_model = VGG16(weights='imagenet', include_top=False, input_shape=(160, 160, 3))
-
-    # Ajuster la forme des images pour correspondre aux attentes du modèle VGG16
-    images = np.expand_dims(images, axis=0)
-
-    # Utiliser le modèle VGG16 pré-entraîné pour extraire les embeddings (caractéristiques)
-    embeddings = vgg_model.predict(images)
-
-    # Aplatir les embeddings en un vecteur 1D
-    embeddings_flat = embeddings.reshape(1,-1)
-
-    # Normaliser les embeddings
-    embeddings_normalized = embeddings_flat
-
-    return embeddings_normalized
-
-
-    return embeddings2
 
 
 
