@@ -1,5 +1,6 @@
 
-opencv-python
+pip install -r requirements.txt
+
 Pillow
 numpy
 streamlit
