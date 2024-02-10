@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-import numpy as np
-from tensorflow.keras.utils import to_categorical
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
-from numpy import load
-from sklearn.preprocessing import LabelEncoder
-from sklearn import svm
-from sklearn.metrics import classification_report
-from sklearn.metrics import accuracy_score
-import pickle
+
 
 
 
@@ -138,5 +128,5 @@ print("the final accuracy is:",accuracy_score(labels3,pred2))
 #np.savez_compressed("final_embeddings_images_dataset.npz", images=images3, labels=labels3)
 
 with open("modeler.pkl", "wb") as file:
->>>>>>> 888eb6ae31ba833388f128e9eeb1176aa9b79c8f
+
     pickle.dump(model, file)

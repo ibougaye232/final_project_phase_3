@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import numpy as np
 from tensorflow.keras.utils import to_categorical
 from sklearn.model_selection import train_test_split
@@ -73,7 +73,7 @@ print(model.predict(images3[103].reshape(1,-1)))
 
 with open("modeler3.pkl", "wb") as file:
     pickle.dump(model, file)
-=======
+
 import numpy as np
 from keras.applications import VGG16
 from keras.preprocessing import image
@@ -97,4 +97,4 @@ embeddings = vgg_model.predict(images)
 #np.savez_compressed("embeddings_images_dataset.npz", images=embeddings, labels=labels)
 
 print(embeddings.shape)
->>>>>>> 888eb6ae31ba833388f128e9eeb1176aa9b79c8f
+
