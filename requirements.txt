@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 opencv-python
 Pillow
 numpy
@@ -5,3 +6,8 @@ streamlit
 tensorflow
 scikit-learn
 
+=======
+numpy==1.26.4
+streamlit==1.31.0
+scikit-learn==1.4.0
+>>>>>>> 888eb6ae31ba833388f128e9eeb1176aa9b79c8f
